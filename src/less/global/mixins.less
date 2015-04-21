@@ -1,0 +1,125 @@
+.a-light(){
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.bg-variant(@color) {
+  background-color: @color;
+  a&:hover,
+  a&:focus {
+    background-color: lighten(@color, 10%);
+  }
+}
+.navbar-vertical-align(@element-height) {
+  padding-top: ((@navbar-height - @element-height) / 2);
+  padding-bottom: ((@navbar-height - @element-height) / 2);
+}
+
+.collapse {
+  display: none;
+
+  &.in      { display: block; }
+  tr&.in    { display: table-row; }
+  tbody&.in { display: table-row-group; }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  // .transition-property(~"height, visibility");
+  // .transition-duration(.35s);
+  // .transition-timing-function(ease);
+}
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  .text-hide();
+  // margin-right: @navbar-padding-horizontal;
+  padding: 21px 16px;
+  // .navbar-vertical-align(37px);
+  background-color: @head-lk-bg;
+  background-image: none;
+  border: 1px solid transparent;
+
+  &:focus {
+    outline: 0;
+  }
+
+  // Bars
+  .icon-bar {
+    display: block;
+    width: 37px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 7px;
+  }
+
+  @media (min-width: @screen-sm) {
+    display: none;
+  }
+}
+.navbar-collapse {
+  overflow-x: visible;
+  &:extend(.clearfix all);
+  -webkit-overflow-scrolling: touch;
+
+  &.in {
+    overflow-y: auto;
+  }
+
+  @media (min-width: @screen-sm) {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+
+    &.collapse {
+      display: block !important;
+      height: auto !important;
+      padding-bottom: 0; // Override default setting
+      overflow: visible !important;
+    }
+
+    &.in {
+      overflow-y: visible;
+    }
+
+
+  }
+}
+
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+
+// Retina image
+//
+// Short retina mixin for setting background-image and -size. Note that the
+// spelling of `min--moz-device-pixel-ratio` is intentional.
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
