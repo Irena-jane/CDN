@@ -15,9 +15,6 @@
 
 }
 
-// .navbar {
-//   float: right;
-// }
 .main-menu {
   .list-unstyled();
 
@@ -112,6 +109,13 @@
     &__call,
     &__lk{
       .text-hide();
+    }
+
+    &__call {
+      .bg-variant(@head-call-bg);
+    }
+    &__lk {
+      .bg-variant(@head-lk-bg);
     }
     & > a {
       float: left;

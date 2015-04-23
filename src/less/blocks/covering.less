@@ -1,0 +1,52 @@
+.covering{
+  background-color: @red;
+  color: #fff;
+  padding: 20px;
+      background-image: url('@{i}map_circle.png');
+      background-position: bottom 40px center;
+      background-size: 280px auto;
+      background-repeat: no-repeat;
+
+    &__container{
+      padding-bottom: 200px;
+    }
+    &__title{
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: normal;
+    }
+    &__text{
+      &:extend(.text);
+    }
+
+}
+
+@media (min-width:@screen-sm) {
+  .covering{
+      background-image: url('@{i}map_circle.png');
+      background-position: center left 30px;
+      background-size: 280px auto;
+    &__container{
+      padding-bottom: 20px;
+      padding-left: 360px;
+    }
+  }
+}
+@media (min-width:@screen-md) {
+    .covering{
+        background-size: 500px auto;
+      &__container{
+        padding-left: 550px;
+      }
+    }
+}
+
+@media (min-width:@screen-lg) {
+      .covering{
+          background-size: 710px auto;
+        &__container{
+          padding: 100px 0;
+          padding-left: 780px;
+        }
+      }
+}

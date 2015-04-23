@@ -1,12 +1,20 @@
 .content-header {
-  // padding: 82px 0;
-  height: 154px;
+  padding: 20px 0;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
+
+  &--resources {
+    color: @black;
+  }
+
   &--about {
+    padding: 0;
+    height: 154px;
     background: url('@{i}about-title_bg_xs.jpg') center center no-repeat;
   }
+
+
   &__title {
     margin: 0;
     .openCon();
@@ -38,6 +46,15 @@
       right: -14px;
     }
   }
+  &__title-inner--resources{
+    padding-top: 20px;
+    line-height: 35px;
+    border-color: @black;
+    &:before,
+    &:after{
+      border-color: @black;
+    }
+  }
   &__slogan {
     .openCon();
     font-size: 15px;
@@ -45,8 +62,8 @@
     padding-top: 15px;
     display: inline-block;
     vertical-align: top;
-    width: 260px;
   }
+
 }
 
 @media (min-width:@screen-xs) {
@@ -54,9 +71,10 @@
 }
 @media (min-width:@screen-sm) {
   .content-header {
-    height: 201px;
-    padding: 20px 0;
+
     &--about {
+      padding: 20px 0;
+      height: 201px;
       background: url('@{i}about-title_bg_md.jpg') center center no-repeat;
     }
     &__title {
@@ -64,6 +82,10 @@
     }
     &__title-inner{
       width: 316px;
+    }
+    &__title-inner--resources{
+      width: 540px;
+      line-height: 80px;
     }
     &__slogan {
       font-size: 20px;
@@ -73,10 +95,17 @@
 }
 @media (min-width:@screen-md) {
   .content-header {
-    height: 321px;
     padding: 82px 0;
     &--about {
+      height: 321px;
       background: url('@{i}about-title_bg.jpg') center center no-repeat;
+    }
+    &--resources{
+      padding: 40px 0;
+    }
+
+    &--cost {
+      padding-bottom: 20px;
     }
     &__title {
       font-size: 72px;
@@ -84,13 +113,22 @@
     &__title-inner{
       width: 416px;
     }
+    &__title-inner--resources{
+      width: 540px;
+    }
     &__slogan {
       font-size: 24px;
       line-height: 30px;
     }
+
   }
 }
 
 @media (min-width:@screen-lg) {
+  .content-header{
+    &--about{
 
+      background-size: cover;
+    }
+  }
 }

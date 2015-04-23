@@ -1,0 +1,26 @@
+.resources{
+  &:extend(.content-section);
+  &__list{
+    padding-left: 20px;
+    *{
+      color: @black;
+    }
+    &--span{
+      padding-left: 0px;
+
+      li{
+        margin-left: 20px;
+      }
+    }
+
+  }
+
+}
+
+
+@media (min-width:@screen-md) {
+    .resources{
+      .container;
+    }
+}
+

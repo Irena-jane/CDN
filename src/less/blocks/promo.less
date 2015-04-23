@@ -1,0 +1,28 @@
+.promo {
+  background-color: @red;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 0 40px;
+  text-align: center;
+
+  &__title{
+    &:extend(.title-big);
+  }
+}
+
+
+
+@media (min-width:@screen-sm) {
+  .promo{
+    padding: 20px 0 40px;
+  }
+}
+
+@media (min-width:@screen-md) {
+  .promo{
+    padding: 88px 0;
+    &__title{
+      padding-bottom: 29px;
+    }
+  }
+}

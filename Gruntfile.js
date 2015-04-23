@@ -52,7 +52,8 @@ module.exports = function(grunt) {
           files: {
             '<%= config.src %>/css/style.min.css': [
             '<%= config.src %>/css/fontello/css/fontello.css',
-            '<%= config.src %>/css/fontello/css/animation.css',
+            '<%= config.src %>/css/fontello/css/fontello.css',
+            '<%= config.src %>/css/bebasneue.css',
             '<%= config.src %>/css/style.css'
 
             ]
