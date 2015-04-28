@@ -131,3 +131,12 @@
   }
 }
 
+.main-title-color (@a) when (lightness(@a) >= 50%) {
+  background-color: @black;
+}
+.main-title-color (@a) when (lightness(@a) < 50%) {
+  background-color: white;
+}
+.main-title-color (@a) {
+  color: @a;
+}

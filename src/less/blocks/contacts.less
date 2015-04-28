@@ -1,0 +1,36 @@
+.contacts {
+  background: transparent url('@{i}contacts-bg_xs.jpg') top center no-repeat;
+}
+
+
+@media (min-width:@screen-xs) {
+  .contacts {
+    background: transparent url('@{i}contacts-bg_sm.jpg') top center no-repeat;
+  }
+}
+@media (min-width:@screen-sm) {
+  .contacts {
+    background: transparent url('@{i}contacts-bg_md.jpg') top center no-repeat;
+  }
+}
+@media (min-width:@screen-md) {
+  body, html,
+  .content--contacts{
+    height: 100%;
+  }
+  .contacts {
+    background: none;
+    height: 100%;
+
+    &__map {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+    }
+  }
+}
+
+@media (min-width:@screen-lg) {
+
+}
