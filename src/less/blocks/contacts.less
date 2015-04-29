@@ -1,32 +1,115 @@
 .contacts {
+  padding-top: 50px;
+  padding-bottom: 30px;
   background: transparent url('@{i}contacts-bg_xs.jpg') top center no-repeat;
+  &__section {
+    &:extend(.content-section);
+    position: relative;
+    z-index: 1;
+
+  }
+  &__title {
+    &:extend(.h3 all);
+    padding: 20px 0;
+  }
+  &__form {
+
+  }
+  &__form-control {
+    margin-bottom: 5px;
+    input,
+    textarea {
+      .form-control();
+    }
+
+    textarea {
+      height: 200px;
+      resize:none;
+      line-height: 24px;
+    }
+
+  }
+  &__message {
+
+  }
+  &__info{
+    .text;
+    color: #fff;
+  }
+  .btn--bluedark{
+    width: 226px;
+  }
 }
 
 
 @media (min-width:@screen-xs) {
   .contacts {
-    background: transparent url('@{i}contacts-bg_sm.jpg') top center no-repeat;
+    background: transparent url('@{i}contacts-bg_sm.jpg')  center -340px no-repeat;
   }
 }
 @media (min-width:@screen-sm) {
   .contacts {
     background: transparent url('@{i}contacts-bg_md.jpg') top center no-repeat;
+    background-size: cover;
+    &__section {
+      // .clearfix;
+      display: flex;
+
+    }
+    &__info {
+      // float: right;
+      padding-top: 64px;
+      order:2;
+      margin-left: 30px;
+    }
+    &__address{
+      margin-top: 0;
+    }
+    &__blank{
+      // float: left;
+    }
   }
 }
 @media (min-width:@screen-md) {
   body, html,
   .content--contacts{
-    height: 100%;
+    min-height: 100%;
   }
   .contacts {
     background: none;
     height: 100%;
 
+    &__section{
+      .container;
+      pointer-events: none;
+    }
+
     &__map {
-      position: absolute;
-      height: 100%;
+      position: fixed!important;
+      min-height: 100%;
       width: 100%;
       top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    &__form {
+      .clearfix;
+
+    }
+
+    &__form-control{
+      width: 355px;
+      margin-bottom: 10px;
+      float: left;
+
+      &:first-of-type{
+        margin-right: 10px;
+      }
+    }
+    &__message {
+      width: 720px;
+      float: none;
     }
   }
 }

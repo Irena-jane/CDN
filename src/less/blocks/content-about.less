@@ -8,10 +8,24 @@
     &--mw520{
       max-width: 520px;
     }
+
+    &--sm{
+      &:extend(.h4);
+    }
   }
+
+
   &__text{
     font-size: 14px;
     line-height: 20px;
+  }
+  &--dark {
+    background: @possible;
+  }
+
+  &__list{
+    &:extend(.text all);
+    padding-left: 20px;
   }
 }
 .content-section:first-of-type{

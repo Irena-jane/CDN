@@ -140,3 +140,24 @@
 .main-title-color (@a) {
   color: @a;
 }
+
+.form-control(){
+  width: 100%;
+  background-color: @input-bg;
+  border: none;
+  height: 70px;
+  line-height: 70px;
+  padding: 20px;
+
+  &:focus,
+  &:hover{
+    outline:none;
+  }
+}
+
+.round-size(@height, @border-width:2px){
+  width: @height;
+  height: @height;
+  line-height: (@height - @border-width*2);
+  border-width: @border-width;
+}

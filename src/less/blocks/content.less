@@ -1,6 +1,11 @@
 .content {
   background-color: @content-bg;
 
+&--service{
+      height: 100%;
+    }
+
+
 }
 
 
@@ -12,6 +17,19 @@
     &--about{
       background: @content-bg url('@{i}about-content_bg_md.jpg') right bottom no-repeat;
     }
+    &__item{
+      .clearfix;
+      &--l,
+      &--r{
+        width: 50%;
+      }
+      &--l{
+      }
+      &--r{
+        margin-left: 50%;
+      }
+    }
+
   }
 }
 @media (min-width:@screen-md) {

@@ -45,6 +45,17 @@
   background-color: @blue;
   color: #fff;
 }
+.btn--bluedark{
+  &:extend(.btn all);
+  background-color: @head-bg;
+  color: #fff;
+
+    &:focus,
+    &:hover,
+    &:active{
+      background-color: @blue;
+    }
+}
 .btn--btext{
   &:extend(.btn all);
   color: @head-bg;
@@ -82,6 +93,7 @@
   line-height: (@height - @border-width*2);
   border-width: @border-width;
 }
+
 .btn-round--lg{
   &:extend(.btn-round all);
   // width: 136px;

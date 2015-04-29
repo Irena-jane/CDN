@@ -1,0 +1,61 @@
+.service-hero{
+  padding-top: @navbar-height;
+  position: relative;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 100px;
+  padding-bottom: 34px;
+  background: url('@{i}tv-hero-bg_xs.jpg') center center no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+    z-index:3;
+  }
+  &__text{
+    &:extend(.text all);
+    color: #fff;
+  }
+  &__svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 560px;
+  }
+}
+
+@media (min-width:@screen-xs) {
+    .service-hero{
+      background: url('@{i}tv-hero-bg_sm.jpg') center center no-repeat;
+      background-size: cover;
+
+      &__text{
+        max-width: 420px;
+      }
+    }
+}
+@media (min-width:@screen-sm) {
+  html,body {
+    height: 100%;
+  }
+
+  .service-hero{
+    min-height: 100%;
+    background: url('@{i}tv-hero-bg_md.jpg') center center no-repeat;
+    background-size: cover;
+  }
+}
+@media (min-width:@screen-md) {
+  .service-hero{
+
+    padding-right: 30px;
+    height: 100%;
+    background: url('@{i}tv-hero-bg.jpg') center center no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (min-width:@screen-lg) {
+
+}
