@@ -1,0 +1,35 @@
+.graphic-about{
+
+  &__picture {
+    display: none;
+  }
+}
+
+
+  @media (min-width:@screen-sm) {
+    .content--about{
+      .content-section{
+
+        &__text{
+          width: 610px;
+
+        }
+
+      }
+
+      .graphic-about{
+        padding-bottom: 20px;
+       &__picture {
+         display: block;
+       }
+      }
+    }
+}
+
+@media (min-width:@screen-md) {
+  .content-section{
+
+    .graphic-about{
+      padding-bottom: 60px;
+    }
+}

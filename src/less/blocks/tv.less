@@ -1,0 +1,116 @@
+.content {
+
+  &__item{
+    padding-bottom: 200px;
+
+    &--tv1{
+      background: url(../gif/tv1.png) center bottom 20px no-repeat;
+      background-size: 200px;
+    }
+
+    &--tv2{
+      background: url(../gif/tv2.png) center bottom 20px no-repeat;
+      background-size: 70px;
+    }
+
+    &--tv3{
+      background: url(../gif/tv3.png) center bottom 20px no-repeat;
+      background-size: 180px;
+    }
+
+    &--tv4{
+      background: url(../gif/tv4.png) center bottom 20px no-repeat;
+      background-size: 250px;
+    }
+
+  }
+
+}
+
+@media (min-width:@screen-sm) {
+  .content {
+
+    &__item{
+      .clearfix;
+      padding-bottom: 20px;
+
+      &--l,
+      &--r{
+        width: 100%;
+      }
+      &--l{
+        padding-right: 50%;
+        background-position: 100% 0;
+      }
+      &--r{
+        padding-left: 50%;
+        background-position: 0 0;
+      }
+
+      background-repeat: no-repeat;
+      background-size: auto;
+
+      &--tv1{
+        // background: url(../gif/tv1.png) center bottom 20px no-repeat;
+        background-repeat: no-repeat;
+        background-position: 0 40px;
+        background-size: 350px;
+      }
+
+      &--tv2{
+        // background: url(../gif/tv2.png) center bottom 20px no-repeat;
+        background-size: 150px;
+        background-position: right 10% top 0px;
+      }
+
+      &--tv3{
+        // background: url(../gif/tv3.png) center bottom 20px no-repeat;
+        background-size: 180px;
+        background-position: 12% center;
+      }
+
+      &--tv4{
+        // background: url(../gif/tv4.png) center bottom 20px no-repeat;
+        background-size: 250px;
+        background-position: right 12% center;
+      }
+
+    }
+
+  }
+}
+
+@media (min-width:@screen-md) {
+  .content {
+
+    &__item{
+
+      background-repeat: no-repeat;
+      background-size: auto;
+
+      &--tv1{
+        background: url(../gif/animation_tv_1.gif) left 1% center no-repeat;
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+
+      &--tv2{
+        background: url(../gif/animation_tv_2.gif) right 12% center no-repeat;
+        background-size: auto;
+        padding-bottom: 300px;
+      }
+
+      &--tv3{
+        background: url(../gif/animation_tv_3.gif) left 12% center no-repeat;
+        background-size: auto;
+      }
+
+      &--tv4{
+        background: url(../gif/tv4.png) right 12% bottom 30px no-repeat;
+        background-size: auto;
+      }
+
+    }
+
+  }
+}

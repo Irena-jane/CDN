@@ -821,6 +821,10 @@ a.nav-btns__eng:focus {
 	vertical-align: top;
 }
 
+.graphic-about__picture {
+	display: none;
+}
+
 .content-section,
 .resources,
 .cost__inner,
@@ -841,16 +845,16 @@ a.nav-btns__eng:focus {
 	background: #172333;
 }
 
+.content-section--possible {
+	background-color: #172333;
+}
+
 .content-section__list {
 	padding-left: 20px;
 }
 
 .content-section:first-of-type {
 	padding-top: 20px;
-}
-
-.graphic-about__picture {
-	display: none;
 }
 
 .covering {
@@ -1192,6 +1196,10 @@ a.nav-btns__eng:focus {
 	background: #172333;
 }
 
+.main-section__container--possible {
+	background-color: #172333;
+}
+
 .main-section__container__list {
 	padding-left: 20px;
 }
@@ -1391,7 +1399,7 @@ a.nav-btns__eng:focus {
 .socials {
 	position: absolute;
 	bottom: 10px;
-	left: 30;
+	left: 30px;
 }
 
 .socials__label {
@@ -1434,6 +1442,30 @@ a.nav-btns__eng:focus {
 	border-radius: 50%;
 }
 
+.content__item {
+	padding-bottom: 200px;
+}
+
+.content__item--tv1 {
+	background: url(../gif/tv1.png) center bottom 20px no-repeat;
+	background-size: 200px;
+}
+
+.content__item--tv2 {
+	background: url(../gif/tv2.png) center bottom 20px no-repeat;
+	background-size: 70px;
+}
+
+.content__item--tv3 {
+	background: url(../gif/tv3.png) center bottom 20px no-repeat;
+	background-size: 180px;
+}
+
+.content__item--tv4 {
+	background: url(../gif/tv4.png) center bottom 20px no-repeat;
+	background-size: 250px;
+}
+
 .hidden {
 	display: none !important;
 }
@@ -1458,6 +1490,13 @@ a.nav-btns__eng:focus {
 
 .content-header--contacts {
 	padding-bottom: 40px;
+}
+
+.content-section--possible {
+	background-image: url('../img/possible_bg_sm.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 .widget-cost__title {
@@ -1558,6 +1597,12 @@ a.nav-btns__eng:focus {
 	background: #182433 url('../img/about-content_bg_md.jpg') right bottom no-repeat;
 }
 
+.content__item {
+	padding-bottom: 20px;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
 .content__item:before,
 .content__item:after {
 	content: " ";
@@ -1570,11 +1615,35 @@ a.nav-btns__eng:focus {
 
 .content__item--l,
 .content__item--r {
-	width: 50%;
+	width: 100%;
+}
+
+.content__item--l {
+	padding-right: 50%;
+	background-position: 100% 0;
 }
 
 .content__item--r {
-	margin-left: 50%;
+	padding-left: 50%;
+	background-position: 0 0;
+}
+
+.content__item--tv1 {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: auto;
+}
+
+.content__item--tv2 {
+	background-size: 70px;
+}
+
+.content__item--tv3 {
+	background-size: 180px;
+}
+
+.content__item--tv4 {
+	background-size: 250px;
 }
 
 .page-header:before,
@@ -1693,15 +1762,15 @@ a.nav-btns__lk:focus {
 	line-height: 25px;
 }
 
-.content-section__text {
+.content--about .content-section__text {
 	width: 610px;
 }
 
-.graphic-about {
+.content--about .graphic-about {
 	padding-bottom: 20px;
 }
 
-.graphic-about__picture {
+.content--about .graphic-about__picture {
 	display: block;
 }
 
@@ -1883,6 +1952,58 @@ body {
 	background-size: cover;
 }
 
+.content__item {
+	padding-bottom: 20px;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.content__item:before,
+.content__item:after {
+	content: " ";
+	display: table;
+}
+
+.content__item:after {
+	clear: both;
+}
+
+.content__item--l,
+.content__item--r {
+	width: 100%;
+}
+
+.content__item--l {
+	padding-right: 50%;
+	background-position: 100% 0;
+}
+
+.content__item--r {
+	padding-left: 50%;
+	background-position: 0 0;
+}
+
+.content__item--tv1 {
+	background-repeat: no-repeat;
+	background-position: 0 40px;
+	background-size: 350px;
+}
+
+.content__item--tv2 {
+	background-size: 150px;
+	background-position: right 10% top 0px;
+}
+
+.content__item--tv3 {
+	background-size: 180px;
+	background-position: 12% center;
+}
+
+.content__item--tv4 {
+	background-size: 250px;
+	background-position: right 12% center;
+}
+
 .sm-shown {
 	display: block;
 }
@@ -2032,10 +2153,6 @@ body {
 	padding-bottom: 0;
 }
 
-.graphic-about {
-	padding-bottom: 60px;
-}
-
 .covering {
 	background-size: 500px auto;
 }
@@ -2171,6 +2288,33 @@ html,
 	height: 100%;
 	background: url('../img/tv-hero-bg.jpg') center center no-repeat;
 	background-size: cover;
+}
+
+.content__item {
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.content__item--tv1 {
+	background: url(../gif/animation_tv_1.gif) left 1% center no-repeat;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.content__item--tv2 {
+	background: url(../gif/animation_tv_2.gif) right 12% center no-repeat;
+	background-size: auto;
+	padding-bottom: 300px;
+}
+
+.content__item--tv3 {
+	background: url(../gif/animation_tv_3.gif) left 12% center no-repeat;
+	background-size: auto;
+}
+
+.content__item--tv4 {
+	background: url(../gif/tv4.png) right 12% bottom 30px no-repeat;
+	background-size: auto;
 }
 
 .md-shown {

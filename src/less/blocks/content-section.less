@@ -1,7 +1,8 @@
 
 
 .content-section {
-    padding: 0 20px;
+  padding: 0 20px;
+
   &__title{
     &:extend(.h2);
 
@@ -22,6 +23,9 @@
   &--dark {
     background: @possible;
   }
+  &--possible {
+    background-color: @possible;
+  }
 
   &__list{
     &:extend(.text all);
@@ -31,43 +35,16 @@
 .content-section:first-of-type{
   padding-top: 20px;
 }
-.graphic-about{
-
-  &__picture {
-    display: none;
-  }
-}
 
 @media (min-width:@screen-xs) {
   .content-section{
-    &__title{
-
-    }
-    &__text{
-
-    }
-  }
-
-}
-@media (min-width:@screen-sm) {
-  .content-section{
-    &__title{
-
-    }
-    &__text{
-      width: 610px;
-
+    &--possible {
+      background-image: url('@{i}possible_bg_sm.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
 
-  }
-  .content-section:first-of-type{
-      // margin-bottom: -60px;
-  }
-  .graphic-about{
-    padding-bottom: 20px;
-   &__picture {
-     display: block;
-   }
   }
 }
 @media (min-width:@screen-md) {
@@ -86,23 +63,7 @@
     padding-top: 70px;
     padding-bottom: 0;
   }
-  .graphic-about{
-    padding-bottom: 60px;
-  }
+
 }
 
-@media (min-width:@screen-lg) {
-  .content-section{
-    &__title{
-
-    }
-    &__text{
-
-    }
-  }
-  .graphic-about{
-
-    // background-size: cover;
-  }
-}
 

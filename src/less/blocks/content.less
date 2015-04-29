@@ -1,10 +1,9 @@
 .content {
   background-color: @content-bg;
 
-&--service{
-      height: 100%;
-    }
-
+  &--service{
+    height: 100%;
+  }
 
 }
 
@@ -19,15 +18,46 @@
     }
     &__item{
       .clearfix;
+      padding-bottom: 20px;
+
       &--l,
       &--r{
-        width: 50%;
+        width: 100%;
       }
       &--l{
+        padding-right: 50%;
+        background-position: 100% 0;
       }
       &--r{
-        margin-left: 50%;
+        padding-left: 50%;
+        background-position: 0 0;
       }
+
+      background-repeat: no-repeat;
+      background-size: auto;
+
+      &--tv1{
+        // background: url(../gif/tv1.png) center bottom 20px no-repeat;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: auto;
+      }
+
+      &--tv2{
+        // background: url(../gif/tv2.png) center bottom 20px no-repeat;
+        background-size: 70px;
+      }
+
+      &--tv3{
+        // background: url(../gif/tv3.png) center bottom 20px no-repeat;
+        background-size: 180px;
+      }
+
+      &--tv4{
+        // background: url(../gif/tv4.png) center bottom 20px no-repeat;
+        background-size: 250px;
+      }
+
     }
 
   }
