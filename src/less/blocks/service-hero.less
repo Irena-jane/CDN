@@ -5,7 +5,7 @@
   padding-left: 30px;
   padding-right: 100px;
   padding-bottom: 34px;
-  background: url('@{i}tv-hero-bg_xs.jpg') center center no-repeat;
+
   background-size: cover;
   overflow: hidden;
 
@@ -23,15 +23,36 @@
     left: 0;
     max-width: 560px;
   }
+
+  &--tv{
+    background:  @head-bg url('@{i}tv-hero-bg_xs.jpg') center center no-repeat;
+  }
+  &--speed{
+    background: @head-bg url('@{i}speed-hero-bg_xs.jpg') center center no-repeat;
+  }
+  &--trance{
+    background: @head-bg url('@{i}trance-hero-bg_xs.jpg') center center no-repeat;
+  }
 }
 
 @media (min-width:@screen-xs) {
     .service-hero{
-      background: url('@{i}tv-hero-bg_sm.jpg') center center no-repeat;
-      background-size: cover;
 
-      &__text{
+      &__inner{
         max-width: 420px;
+      }
+      &--tv{
+        background: url('@{i}tv-hero-bg_sm.jpg') center center no-repeat;
+        background-size: cover;
+
+      }
+      &--speed{
+        background: url('@{i}speed-hero-bg_sm.jpg') center center no-repeat;
+        background-size: cover;
+      }
+      &--trance{
+        background: url('@{i}trance-hero-bg_sm.jpg') center center no-repeat;
+        background-size: cover;
       }
     }
 }
@@ -42,8 +63,19 @@
 
   .service-hero{
     min-height: 100%;
-    background: url('@{i}tv-hero-bg_md.jpg') center center no-repeat;
-    background-size: cover;
+
+    &--tv{
+      background: url('@{i}tv-hero-bg_md.jpg') center center no-repeat;
+      background-size: cover;
+    }
+    &--speed{
+      background: url('@{i}speed-hero-bg_md.jpg') center center no-repeat;
+      background-size: cover;
+    }
+    &--trance{
+      background: url('@{i}trance-hero-bg_md.jpg') center center no-repeat;
+      background-size: cover;
+    }
   }
 }
 @media (min-width:@screen-md) {
@@ -51,8 +83,21 @@
 
     padding-right: 30px;
     height: 100%;
-    background: url('@{i}tv-hero-bg.jpg') center center no-repeat;
-    background-size: cover;
+    min-height:900px;
+
+    &--tv{
+      background: url('@{i}tv-hero-bg.jpg') center center no-repeat;
+      background-size: cover;
+    }
+    &--speed{
+      background: url('@{i}speed-hero-bg.jpg') center center no-repeat;
+      background-size: cover;
+    }
+    &--trance{
+      background: url('@{i}trance-hero-bg.jpg') center center no-repeat;
+      background-size: cover;
+    }
+
   }
 }
 

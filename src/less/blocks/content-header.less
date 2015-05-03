@@ -14,6 +14,12 @@
     background: url('@{i}about-title_bg_xs.jpg') center center no-repeat;
   }
 
+  &--cdn {
+    padding: 0;
+    height: 139px;
+    background: url('@{i}cdn-title_bg_xs.jpg') center center no-repeat;
+  }
+
   &--service {
     text-align: left;
     .content-header__title{
@@ -102,6 +108,11 @@
       height: 201px;
       background: url('@{i}about-title_bg_md.jpg') center center no-repeat;
     }
+    &--cdn {
+      padding: 20px 0;
+      height: 181px;
+      background: url('@{i}cdn-title_bg_md.jpg') center center no-repeat;
+    }
     &__title {
       font-size: 42px;
     }
@@ -124,6 +135,10 @@
     &--about {
       height: 321px;
       background: url('@{i}about-title_bg.jpg') center center no-repeat;
+    }
+    &--cdn {
+      height: 289px;
+      background: url('@{i}cdn-title_bg.jpg') center center no-repeat;
     }
     &--resources{
       padding: 40px 0;
@@ -161,7 +176,8 @@
 
 @media (min-width:@screen-lg) {
   .content-header{
-    &--about{
+    &--about,
+    &--cdn{
 
       background-size: cover;
     }

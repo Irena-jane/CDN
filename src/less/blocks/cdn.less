@@ -1,0 +1,113 @@
+.content {
+
+  &__item{
+    padding-bottom: 200px;
+    background-position:  center bottom 20px ;
+    background-repeat: no-repeat;
+
+    &--cdn1{
+      background-image: url(../gif/cdn1.png);
+      background-size: 200px;
+    }
+
+    &--cdn2{
+      background-image: url(../gif/cdn2.png);
+      background-size: 250px;
+    }
+
+    &--cdn4{
+      background-image: url(../gif/cdn3.png);
+      background-size: 250px;
+    }
+
+    &--cdn5{
+      background-image: url(../gif/cdn5.png);
+      background-size: 250px;
+    }
+
+  }
+
+}
+
+@media (min-width:@screen-sm) {
+  .content {
+
+    &__item{
+      .clearfix;
+      padding-bottom: 20px;
+
+      &--l,
+      &--r{
+        width: 100%;
+      }
+      &--l{
+        padding-right: 50%;
+        background-position: right 10% center;
+      }
+      &--r{
+        padding-left: 50%;
+        background-position: 12% center;
+      }
+
+      background-repeat: no-repeat;
+      background-size: auto;
+
+      &--cdn1{
+        background-size: 350px;
+      }
+
+      &--cdn2{
+        background-size: 300px;
+        background-position: 9% center;
+      }
+
+      &--cdn4{
+        background-size: 250px;
+      }
+
+    }
+
+  }
+}
+
+@media (min-width:@screen-md) {
+  .content {
+
+    &__item{
+
+      background-repeat: no-repeat;
+      background-size: auto;
+
+
+      &--cdn1{
+        background-image: url(../gif/animation_cdn_1.gif);
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+
+      &--cdn2{
+        background-image: url(../gif/animation_cdn_2.gif);
+        background-position: left center;
+        background-size: auto;
+        padding-bottom: auto;
+      }
+
+      &--cdn3{
+        background-image: url(../gif/animation_tv_3.gif);
+        background-size: auto;
+      }
+
+      &--cdn4{
+        background-image: url(../gif/cdn4.png);
+        background-size: auto;
+      }
+
+      &--cdn5{
+        background-image: url(../gif/animation_cdn_5.gif);
+        background-size: auto;
+      }
+
+    }
+
+  }
+}

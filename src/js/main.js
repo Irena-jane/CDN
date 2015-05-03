@@ -46,6 +46,11 @@ $(function(){
             //   }
             // ];
 
+            /*
+            Стили для geo:
+            [{"featureType":"water","elementType":"geometry.fill","stylers":[{"invert_lightness":true},{"color":"#46647f"},{"saturation":-10}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"color":"#101010"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#1e1e1e"}]}]*/
+
+
                 var stylez =   [
               {
                   "stylers": [
