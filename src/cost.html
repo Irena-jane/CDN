@@ -8,10 +8,11 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=cyrillic' rel='stylesheet' type='text/css'>
   <link href="http://allfont.net/css/?fonts=bebas-neue" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/angular.rangeSlider.css">
 </head>
 <body>
-  <section class="cost">
-    <div class="cost__inner">
+  <section class="cost" ng-app="cost">
+    <div class="cost__inner" ng-controller="CostController as cost">
       <header class="content-header content-header--cost">
           <h1 class="content-header__title">
             <span class="content-header__title-inner">Стоимость</span>
@@ -20,13 +21,13 @@
       </header>
       <div class="cost__remark">Вы платите только по факту и только за тот трафик, который реально потребили. <br class="sm-shown">Никакой абонентской платы!</div>
 
-      <div class="widget-cost">
+      <div class="widget-cost" ng-controller="SliderCtrlController as control">
         <div class="widget-cost__covering">
           <h2 class="widget-cost__title">Покрытие</h2>
           <div class="widget-cost__covering-choice">
-            <a class="btn-round--lg" href="#0"><span>Россия<br>СНГ</span></a>
-            <a class="btn-round--lg" href="#0"><span>Европа<br>Азия</span></a>
-            <a class="btn-round--lg" href="#0"><span>Америка</span></a>
+            <a class="btn-area" ng-class="{selected:control.getSettings('rus')}" ng-click="control.setSettings('rus')" href="#0"><span>Россия<br>СНГ</span></a>
+            <a class="btn-area btn-area--center" ng-class="{selected:control.getSettings('eur')}" ng-click="control.setSettings('eur')" href="#0"><span>Европа<br>Азия</span></a>
+            <a class="btn-area" ng-class="{selected:control.getSettings('amer')}" ng-click="control.setSettings('amer')" href="#0"><span>Америка</span></a>
           </div>
 
         </div>
@@ -35,27 +36,139 @@
           <h2 class="widget-cost__title">Ежемесячный трафик</h2>
 
           <div class="widget-cost__slider-wrap">
-            <a class="btn-round--xs" href="#0">ГБ</a>
-            <div class="widget-cost__slider"></div>
-            <a class="btn-round--xs" href="#0">ТБ</a>
+            <a class="btn-round--xs btn-gb" ng-click="control.setSettingsTB('gb')" ng-class="{selected:!control.tb}"  href="#0">ГБ</a>
 
-            <div class="widget-cost__output">
-              <span class="widget-cost__from">11264 ГБ</span> -
-              <span class="widget-cost__to">51200 ГБ</span>
+            <div class="widget-cost__slider">
+
+              <form name="rangeForm" class="range-form">
+
+                  <div class="wrapper-range-slider">
+                    <range-slider min="0" max="control.max" model-min="0" pin-handle="max" attach-handle-values="true"></range-slider>
+
+                  </div>
+              </form>
+
+            </div>
+
+            <a class="btn-round--xs btn-tb" ng-click="control.setSettingsTB('tb')" ng-class="{selected:control.tb}" href="#0">ТБ</a>
+
+            <div ng-show="control.getSliderArea(5)" class="widget-cost__outputs widget-cost__outputs--rus">
+              <div data-index="0" class="widget-cost__output">
+                Менее
+                <span class="widget-cost__num">3 ТБ</span>
+              </div>
+
+              <div data-index="1" class="widget-cost__output widget-cost__output--active">
+                <span class="widget-cost__num">4 ТБ</span> -
+                <span class="widget-cost__num">10 ТБ</span>
+              </div>
+
+              <div data-index="2" class="widget-cost__output">
+                <span class="widget-cost__num">11 ТБ</span> -
+                <span class="widget-cost__num">50 ТБ</span>
+              </div>
+
+              <div data-index="3" class="widget-cost__output">
+                <span class="widget-cost__num">51 ТБ</span> -
+                <span class="widget-cost__num">300 ТБ</span>
+              </div>
+
+              <div data-index="4" class="widget-cost__output">
+                Свыше
+                <span class="widget-cost__num">300 ТБ</span>
+              </div>
+
+            </div>
+
+            <div ng-show="control.getSliderArea(4)" class="widget-cost__outputs widget-cost__outputs--eur">
+              <div data-index="0" class="widget-cost__output">
+                Менее
+                <span class="widget-cost__num">10 ТБ</span>
+              </div>
+
+              <div data-index="1" class="widget-cost__output">
+                <span class="widget-cost__num">11 ТБ</span> -
+                <span class="widget-cost__num">50 ТБ</span>
+              </div>
+
+              <div data-index="2" class="widget-cost__output">
+                <span class="widget-cost__num">51 ТБ</span> -
+                <span class="widget-cost__num">100 ТБ</span>
+              </div>
+
+              <div data-index="3" class="widget-cost__output">
+                Свыше
+                <span class="widget-cost__num">100 ТБ</span>
+              </div>
             </div>
 
           </div>
         </div>
 
         <div class="widget-cost__total">
-          <a class="widget-cost__btn btn-round--xs" href="#0"><del>P</del></a>
-          <div class="widget-cost__result">
-            <span>
+          <a ng-class="{selected:control.rub}" ng-click="control.setSliderUnit('rub')" class="widget-cost__btn btn-round--xs" href="#0"><del>P</del></a>
+          <div ng-show="control.getSettings('rus')" class="widget-cost__result">
+            <span data-index="0" class="wc-rub wc-rub--active">
               <span class="widget-cost__price">3000</span><br>
               <span class="widget-cost__units"><del>P</del>/ГБ</span>
             </span>
+            <span data-index="1" class="wc-rub">
+              <span class="widget-cost__price">2500</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="2" class="wc-rub">
+              <span class="widget-cost__price">2000</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="3" class="wc-rub">
+              <span class="widget-cost__price">1000</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="4" class="wc-rub">
+              Персо<wbr>нальная <br>цена
+            </span>
           </div>
-          <a class="widget-cost__btn btn-round--xs" href="#0">€</a>
+
+          <div ng-show="control.getSettings('eur')" class="widget-cost__result">
+            <span data-index="0" class="wc-rub wc-rub--active">
+              <span class="widget-cost__price">5500</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="1" class="wc-rub">
+              <span class="widget-cost__price">4500</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="2" class="wc-rub">
+              <span class="widget-cost__price">4000</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="3" class="wc-rub">
+              <span class="widget-cost__price">3500</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+          </div>
+
+          <div ng-show="control.getSettings('amer')" class="widget-cost__result">
+            <span data-index="0" class="wc-rub wc-rub--active">
+              <span class="widget-cost__price">6500</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="1" class="wc-rub">
+              <span class="widget-cost__price">5500</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="2" class="wc-rub">
+              <span class="widget-cost__price">4000</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+            <span data-index="3" class="wc-rub">
+              <span class="widget-cost__price">3500</span><br>
+              <span class="widget-cost__units"><del>P</del>/ГБ</span>
+            </span>
+          </div>
+
+
+          <a ng-class="{selected:!control.rub}" ng-click="control.setSliderUnit('euro')"  class="widget-cost__btn btn-round--xs" href="#0">€</a>
         </div>
       </div>
 
@@ -75,5 +188,8 @@
 
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/plugins/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="js/angular.rangeSlider.js"></script>
+  <script src="js/cost.js"></script>
 </body>
 </html>

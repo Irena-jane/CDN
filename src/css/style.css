@@ -478,6 +478,8 @@ body,
 .btn-round--lg,
 .btn-round--xs,
 .btn-round--xs,
+.widget-cost .btn-area,
+.widget-cost .btn-area,
 .widget-cost__result,
 .tooltip .btn-tooltip {
 	display: inline-block;
@@ -509,6 +511,14 @@ body,
 .btn-round--xs:focus,
 .btn-round--xs:hover,
 .btn-round--xs:active,
+.widget-cost .btn-area,
+.widget-cost .btn-area:focus,
+.widget-cost .btn-area:hover,
+.widget-cost .btn-area:active,
+.widget-cost .btn-area,
+.widget-cost .btn-area:focus,
+.widget-cost .btn-area:hover,
+.widget-cost .btn-area:active,
 .widget-cost__result,
 .widget-cost__result:focus,
 .widget-cost__result:hover,
@@ -531,6 +541,10 @@ body,
 .btn-round--xs:hover,
 .btn-round--xs:focus,
 .btn-round--xs:hover,
+.widget-cost .btn-area:focus,
+.widget-cost .btn-area:hover,
+.widget-cost .btn-area:focus,
+.widget-cost .btn-area:hover,
 .widget-cost__result:focus,
 .widget-cost__result:hover,
 .tooltip .btn-tooltip:focus,
@@ -549,6 +563,10 @@ body,
 .btn-round--xs span,
 .btn-round--xs del,
 .btn-round--xs span,
+.widget-cost .btn-area del,
+.widget-cost .btn-area span,
+.widget-cost .btn-area del,
+.widget-cost .btn-area span,
 .widget-cost__result del,
 .widget-cost__result span,
 .tooltip .btn-tooltip del,
@@ -573,6 +591,12 @@ body,
 .btn-round--xs:focus,
 .btn-round--xs:hover,
 .btn-round--xs.selected,
+.widget-cost .btn-area:focus,
+.widget-cost .btn-area:hover,
+.widget-cost .btn-area.selected,
+.widget-cost .btn-area:focus,
+.widget-cost .btn-area:hover,
+.widget-cost .btn-area.selected,
 .widget-cost__result:focus,
 .widget-cost__result:hover,
 .widget-cost__result.selected,
@@ -959,6 +983,13 @@ a.nav-btns__eng:focus {
 	margin-bottom: 10px;
 }
 
+.widget-cost .btn-area {
+	width: 80px;
+	height: 80px;
+	line-height: 76px;
+	border-width: 2px;
+}
+
 .widget-cost__title {
 	position: relative;
 	background-color: #2c3e50;
@@ -1081,14 +1112,27 @@ a.nav-btns__eng:focus {
 	border-color: #6282a2;
 }
 
-.widget-cost__output {
+.widget-cost__result .wc-rub {
+	display: none;
+}
+
+.widget-cost__result .wc-rub--active {
+	display: inline-block;
+}
+
+.widget-cost__outputs {
 	margin-top: 30px;
 }
 
-.widget-cost__output span {
+.widget-cost__output {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 24px;
 	color: #fff;
+	display: none;
+}
+
+.widget-cost__output--active {
+	display: block;
 }
 
 .main-hero {
@@ -1575,6 +1619,10 @@ a.nav-btns__eng:focus {
 	font-size: 16px;
 }
 
+.widget-cost .btn-area--center {
+	margin: 0 5%;
+}
+
 .main-section__slogan {
 	font-size: 16px;
 }
@@ -1873,6 +1921,13 @@ a.nav-btns__lk:focus {
 
 .widget-cost__covering-choice .btn-round--lg:not(:last-child) {
 	margin-right: 56px;
+}
+
+.widget-cost .btn-area {
+	width: 136px;
+	height: 136px;
+	line-height: 132px;
+	border-width: 2px;
 }
 
 .main-section__slogan {
@@ -2282,6 +2337,24 @@ body {
 .cost__inner {
 	margin: auto;
 	position: relative;
+}
+
+.widget-cost__slider-wrap {
+	position: relative;
+}
+
+.widget-cost__slider-wrap .btn-tb,
+.widget-cost__slider-wrap .btn-gb {
+	position: absolute;
+	top: -25px;
+}
+
+.widget-cost__slider-wrap .btn-tb {
+	left: 7%;
+}
+
+.widget-cost__slider-wrap .btn-gb {
+	right: 7%;
 }
 
 .main-section__text {

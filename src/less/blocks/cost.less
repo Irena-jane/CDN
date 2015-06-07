@@ -48,7 +48,10 @@
 }
 
 .widget-cost {
-
+  .btn-area{
+    &:extend(.btn-round all);
+    .btn-round-size(80px);
+  }
   &__title {
     position: relative;
     background-color: @cost-bg;
@@ -112,7 +115,12 @@
       border-color: @blue;
     }
 
-
+    .wc-rub {
+      display: none;
+      &--active {
+        display: inline-block;
+      }
+    }
   }
 
   &__covering-choice{
@@ -124,28 +132,31 @@
   &__slider {
 
   }
-  &__output {
+  &__outputs {
     margin-top: 30px;
-    span{
+  }
+  &__output {
+
       .openCon();
       font-size: 24px;
       color: #fff;
-    }
-  }
-  &__from {
+      display: none;
 
+      &--active {
+        display: block;
+      }
   }
-  &__to {
-
-  }
-
 }
 
 
 
 
 @media (min-width:@screen-xs) {
-
+  .widget-cost{
+    .btn-area--center{
+      margin: 0 5%;
+    }
+  }
 }
 @media (min-width:@screen-sm) {
   .cost{
@@ -155,7 +166,6 @@
     }
   }
   .widget-cost{
-
     &__covering,
     &__traffic{
       .covering-title-position(60px);
@@ -178,6 +188,10 @@
         margin-right: 56px;
       }
     }
+    .btn-area{
+      &:extend(.btn-round all);
+      .btn-round-size(136px);
+    }
   }
 }
 @media (min-width:@screen-md) {
@@ -185,6 +199,23 @@
     &__inner{
       .container();
     }
+  }
+  .widget-cost{
+    &__slider-wrap{
+      position: relative;
+      .btn-tb,
+      .btn-gb{
+        position: absolute;
+        top: -25px;
+      }
+      .btn-tb{
+        left: 7%;
+      }
+      .btn-gb{
+        right: 7%;
+      }
+    }
+
   }
 }
 
