@@ -468,8 +468,20 @@ body,
 	color: #2c3e50;
 }
 
+.btn--btext:focus,
+.btn--btext:hover {
+	background-color: #6282a2;
+	color: #fff;
+}
+
 .btn--red {
 	background-color: #e95d4f;
+	color: #fff;
+}
+
+.btn--red:focus,
+.btn--red:hover {
+	background-color: #6282a2;
 	color: #fff;
 }
 

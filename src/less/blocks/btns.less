@@ -59,11 +59,23 @@
 .btn--btext{
   &:extend(.btn all);
   color: @head-bg;
+  &:focus,
+  &:hover{
+    background-color: @blue;
+    color: #fff;
+  }
+
 }
 .btn--red{
   &:extend(.btn all);
   background-color: @red;
   color: #fff;
+  &:focus,
+  &:hover{
+    background-color: @blue;
+    color: #fff;
+  }
+
 }
 .btn-round{
   .a-btn;
